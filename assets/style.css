@@ -13,3 +13,18 @@
 ul li {
   list-style: none;
 }
+
+.moderate {
+  background-color: yellow;
+  color: white;
+}
+
+.bad {
+  background-color: #ff6961;
+  color: white;
+}
+
+.good {
+  background-color: #77dd77;
+  color: white;
+}
