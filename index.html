@@ -11,6 +11,11 @@
     <title>Document</title>
 </head>
 <header class="Weather-dash">Weather Dashboard</header>
+<!--  -->
+<!--  -->
+<!-- the more i think about it should i have all these cards for the 5 days gunna be real now sure how to link them all BIG OOF -->
+<!--  -->
+<!--  -->
 
 <body>
     <div class="row h-100">
@@ -30,14 +35,14 @@
         <div class="card col-lg-9">
             <div class="card-header">Featured</div>
             <div class="card-body">
-                <h5 class="cityName"></h5>
-                <ul id="date">
-                    <img id='icon' src="" alt="" />
-                    <li id="temp">Temp</li>
-                    <li id="wind">Wind</li>
-                    <li id="humidity">Humidity</li>
+                <h5 class="cityName" id="date"></h5>
+                <ul>
+                    <div class="weather-icon"><img src="icons/unknown.png" /></div>
+                    <li id="temp">Temp:</li>
+                    <li id="wind">Wind:</li>
+                    <li id="humidity">Humidity:</li>
                     <!-- need to make a box next to uv to change colors when bad, good ,ok -->
-                    <li id="uvIndex">UV Index</li>
+                    <li id="uvIndex">UV Index:</li>
                 </ul>
             </div>
         </div>
@@ -45,58 +50,69 @@
     </div>
     <div class="inline">
         <div class="card" style="width: 18rem">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+            <ul id="cityHistory" class="list-group list-group-flush">
+
             </ul>
         </div>
     </div>
 
     <div class="row fiveDay">
         <div class="card" style="width: 18rem">
-            <img src="..." class="card-img-top" alt="..." />
+            <h1 id="date"></h1>
+            <img src="icon" class="card-img-top" alt="..." />
             <div class="card-body">
-                <p class="card-text">
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                </p>
+                <ul>
+                    <li id="temp">Temp:</li>
+                    <li id="wind">Wind:</li>
+                    <li id="humidity">Humidity:</li>
+                </ul>
             </div>
         </div>
         <div class="card" style="width: 18rem">
-            <img src="..." class="card-img-top" alt="..." />
+            <h1 id="date"></h1>
+            <img src="icon" class="card-img-top" alt="..." />
             <div class="card-body">
-                <p class="card-text">
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                </p>
+                <ul>
+                    <li id="temp">Temp:</li>
+                    <li id="wind">Wind:</li>
+                    <li id="humidity">Humidity:</li>
+                </ul>
             </div>
         </div>
         <div class="card" style="width: 18rem">
-            <img src="..." class="card-img-top" alt="..." />
+
+            <h1 id="date"></h1>
+            <img src="icon" class="card-img-top" alt="..." />
             <div class="card-body">
-                <p class="card-text">
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                </p>
+                <ul>
+                    <li id="temp">Temp:</li>
+                    <li id="wind">Wind:</li>
+                    <li id="humidity">Humidity:</li>
+                </ul>
             </div>
         </div>
         <div class="card" style="width: 18rem">
-            <img src="..." class="card-img-top" alt="..." />
+
+            <h1 id="date"></h1>
+            <img src="icon" class="card-img-top" alt="..." />
             <div class="card-body">
-                <p class="card-text">
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                </p>
+                <ul>
+                    <li id="temp">Temp:</li>
+                    <li id="wind">Wind:</li>
+                    <li id="humidity">Humidity:</li>
+                </ul>
             </div>
         </div>
         <div class="card" style="width: 18rem">
-            <img src="..." class="card-img-top" alt="..." />
+
+            <h1 id="date"></h1>
+            <img src="icon" class="card-img-top" alt="..." />
             <div class="card-body">
-                <p class="card-text">
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                </p>
+                <ul>
+                    <li id="temp">Temp:</li>
+                    <li id="wind">Wind:</li>
+                    <li id="humidity">Humidity:</li>
+                </ul>
             </div>
         </div>
     </div>
