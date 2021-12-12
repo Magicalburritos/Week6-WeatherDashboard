@@ -12,7 +12,7 @@ var windSpeed = $('#wind');
 var uvIndex = $('#uvIndex');
 var cityHistory = $('#cityHistory');
 var cityIcon = $('#cityIcon');
-
+var time;
 // // thinking of how to umplament buttons
 // let locationIcon = document.querySelector('.weather-icon');
 // const { icon } = data.weather[0].icon;
@@ -68,7 +68,7 @@ var getWeather = async function () {
 };
 
 //  sapossed to be a 5 day forcast need a way to make it fill up each car and prob one of those i++ soo it goes from the current date and adds 5 more WiP
-`https//:api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
+`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
 
 // only sends the search querry when clicked?
 searchButton.click(getWeather);
