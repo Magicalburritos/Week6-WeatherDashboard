@@ -1,17 +1,17 @@
 // global var
-const apiKey = '417c16f9d2a5b6380aafa3dac636a4e5';
-const searchButton = $('#searchBtn');
+var apiKey = '417c16f9d2a5b6380aafa3dac636a4e5';
+var searchButton = $('#searchBtn');
 // might not need all these but meh
 // weather variables
-const citySearch = $('#citySearch');
-const cityName = $('.cityName');
-const cityDate = $('#date');
-const cityTemp = $('#temp');
-const humidity = $('#humidity');
-const windSpeed = $('#wind');
-const uvIndex = $('#uvIndex');
-const cityHistory = $('#cityHistory');
-const cityIcon = $('#cityIcon');
+var citySearch = $('#citySearch');
+var cityName = $('.cityName');
+var cityDate = $('#date');
+var cityTemp = $('#temp');
+var humidity = $('#humidity');
+var windSpeed = $('#wind');
+var uvIndex = $('#uvIndex');
+var cityHistory = $('#cityHistory');
+var cityIcon = $('#cityIcon');
 
 // // thinking of how to umplament buttons
 // let locationIcon = document.querySelector('.weather-icon');
@@ -22,12 +22,12 @@ const cityIcon = $('#cityIcon');
 
 // there are a lot of cities need array
 
-const cities = [];
+var cities = [];
 
 // saving citys information
 // alright lost af not even sure how to geather all the citys like What -_- probs a for loop with a if and at the end
-const searchHistory = function () {
-  const cityName = function (citySearch) {
+var searchHistory = function () {
+  var cityName = function (citySearch) {
     for (let i = 0; i < city.length; i++) {}
   };
 
@@ -35,7 +35,7 @@ const searchHistory = function () {
 };
 
 // api call to get the info i need
-const getWeather = async function () {
+var getWeather = async function () {
   let response = await fetch(
     //   useing charlotte to make sure it works  but need to end up being ${cityName}
     `https://api.openweathermap.org/data/2.5/weather?q=Charlotte&units=standard&appid=${apiKey}`
@@ -43,7 +43,7 @@ const getWeather = async function () {
 
   let data = await response.json();
 
-  const { temp, humidity, icon, speed, dt, name, lat, lon } = data;
+  var { temp, humidity, icon, speed, dt, name, lat, lon } = data;
 
   // making a second call to get the long a latt from the the 1st call to the second for uvIndex
   //   i think i need a paid acount to do this might need to find another way not sure yet
@@ -52,7 +52,7 @@ const getWeather = async function () {
   );
 
   let secondData = await secondResponse.json();
-  const { uvi } = secondData;
+  var { uvi } = secondData;
 
   console.log(data);
 
@@ -75,7 +75,7 @@ searchButton.click(getWeather);
 
 // puts the data in my html from js i think still working
 
-const postWeather = function (temp, humidity, icon, speed, dt, name, uvi) {
+var postWeather = function (temp, humidity, icon, speed, dt, name, uvi) {
   cityTemp.html(temp);
   cityIcon.attr('scr', icon);
   cityName.html(name);
@@ -105,6 +105,6 @@ const changeColors = function () {
   }
 };
 
-const searchHistory = function () {
+var searchHistory = function () {
   cityHistory = JSON.parse(localStorage.getItem('city'));
 };
