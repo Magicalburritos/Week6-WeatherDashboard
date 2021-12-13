@@ -22,9 +22,9 @@
         <div class="col-lg-3">
             <div class="card">
                 <h3 class="card-header text-search">Search For a City:</h3>
-                <form id="citySearch" class="card-body">
+                <form class="card-body">
                     <label class="form-label"></label>
-                    <input name="cityname" type="text" autofocus="true" class="form-input" />
+                    <input id="citySearch" name="citySearch" type="text" autofocus="true" class="form-input" />
                     <br />
                     <br />
                     <button type="button" id='searchBtn' class="btn btn-primary">search</button>
@@ -33,17 +33,17 @@
         </div>
 
         <div class="card col-lg-9">
-            <div class="card-header">Featured</div>
+            <div class="card-header">Today's Weather</div>
             <div class="card-body">
                 <h5 class="cityName"></h5>
                 <h6 id="currentDate"></h6>
                 <ul>
-                    <img id='cityIcon' src="icons/unknown.png" />
+                    <img id='cityIcon' src="" />
                     <li id="temp">Temp:</li>
                     <li id="wind">Wind:</li>
                     <li id="humidity">Humidity:</li>
                     <!-- need to make a box next to uv to change colors when bad, good ,ok -->
-                    <li id="uvIndex">UV Index:</li>
+                    <li>UV Index: <span id="uvIndex" class=""></span></li>
                 </ul>
             </div>
         </div>
@@ -59,60 +59,60 @@
 
     <div class="row fiveDay">
         <div class="card" style="width: 18rem">
-            <h1 id="date"></h1>
-            <img src="icon" class="card-img-top" alt="..." />
+            <h6 id="date24"></h6>
+            <img id='img24' class="mx-auto" src="" alt="..." />
             <div class="card-body">
                 <ul>
-                    <li id="temp">Temp:</li>
-                    <li id="wind">Wind:</li>
-                    <li id="humidity">Humidity:</li>
+                    <li id="temp24">Temp:</li>
+                    <li id="speed24">speed:</li>
+                    <li id="humidity24">Humidity:</li>
                 </ul>
             </div>
         </div>
         <div class="card" style="width: 18rem">
-            <h1 id="date"></h1>
-            <img src="icon" class="card-img-top" alt="..." />
+            <h6 id="date48"></h6>
+            <img id='img48' class="mx-auto" src="" alt="..." />
             <div class="card-body">
                 <ul>
-                    <li id="temp">Temp:</li>
-                    <li id="wind">Wind:</li>
-                    <li id="humidity">Humidity:</li>
-                </ul>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem">
-
-            <h1 id="date"></h1>
-            <img src="icon" class="card-img-top" alt="..." />
-            <div class="card-body">
-                <ul>
-                    <li id="temp">Temp:</li>
-                    <li id="wind">Wind:</li>
-                    <li id="humidity">Humidity:</li>
+                    <li id="temp48">Temp:</li>
+                    <li id="speed48">speed:</li>
+                    <li id="humidity48">Humidity:</li>
                 </ul>
             </div>
         </div>
         <div class="card" style="width: 18rem">
 
-            <h1 id="date"></h1>
-            <img src="icon" class="card-img-top" alt="..." />
+            <h6 id="date72"></h6>
+            <img id='img72' class="mx-auto" src="" alt="..." />
             <div class="card-body">
                 <ul>
-                    <li id="temp">Temp:</li>
-                    <li id="wind">Wind:</li>
-                    <li id="humidity">Humidity:</li>
+                    <li id="temp72">Temp:</li>
+                    <li id="speed72">speed:</li>
+                    <li id="humidity72">Humidity:</li>
                 </ul>
             </div>
         </div>
         <div class="card" style="width: 18rem">
 
-            <h1 id="date"></h1>
-            <img src="icon" class="card-img-top" alt="..." />
+            <h6 id="date96"></h6>
+            <img id='img96' class="mx-auto" src="" alt="..." />
             <div class="card-body">
                 <ul>
-                    <li id="temp">Temp:</li>
-                    <li id="wind">Wind:</li>
-                    <li id="humidity">Humidity:</li>
+                    <li id="temp96">Temp:</li>
+                    <li id="speed96">speed:</li>
+                    <li id="humidity96">Humidity:</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem">
+
+            <h6 id="date120"></h6>
+            <img id='img120' class="mx-auto" src="" alt="..." />
+            <div class="card-body">
+                <ul>
+                    <li id="temp120">Temp:</li>
+                    <li id="speed120">speed:</li>
+                    <li id="humidity120">Humidity:</li>
                 </ul>
             </div>
         </div>
