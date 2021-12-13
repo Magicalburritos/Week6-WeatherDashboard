@@ -1,7 +1,7 @@
 // global var
 var apiKey = '417c16f9d2a5b6380aafa3dac636a4e5';
 var searchButton = $('#searchBtn');
-// might not need all these but meh
+
 // weather variables
 var citySearch = $('#citySearch');
 var cityName = $('.cityName');
@@ -13,13 +13,10 @@ var uvIndexel = $('#uvIndex');
 var cityHistory = $('#cityHistory');
 var cityIcon = $('#cityIcon');
 var time;
-// // thinking of how to umplament buttons
+
+let cities = [];
 
 // API call for Weather
-
-// there are a lot of cities need array
-
-var cities = [];
 function timeConverter(UNIX_timestamp) {
   var a = new Date(UNIX_timestamp * 1000);
   var months = [
@@ -42,18 +39,13 @@ function timeConverter(UNIX_timestamp) {
   time = date + ' ' + month + ' ' + year;
   return time;
 }
-// saving citys information
-// alright lost af not even sure how to geather all the citys like What -_- probs a for loop with a if and at the end
-
-var saveTasks = function (cityName) {
-  localStorage.setItem(cityName, JSON.stringify(tasks));
-};
 
 // api call to get the info i need
-var getWeather = async function () {
+var getWeather = async function (city) {
+  console.log(city);
   let response = await fetch(
     //   useing charlotte to make sure it works  but need to end up being ${cityName}
-    `https://api.openweathermap.org/data/2.5/weather?q=charlotte&units=standard&appid=${apiKey}`
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
   );
 
   let data = await response.json();
@@ -77,10 +69,8 @@ var getWeather = async function () {
   getFiveDay();
   postWeather(temp, humidity, icon, speed, time, name, uvi);
   changeColors(uvi);
+  saveCity(name);
 };
-
-// only sends the search querry when clicked?
-searchButton.click(getWeather);
 
 var getFiveDay = async function () {
   let response = await fetch(
@@ -103,22 +93,21 @@ var getFiveDay = async function () {
 
 var postFiveDay = function (i, temp, humidity, icon, speed, date) {
   $(`#date${i}`).text(date);
-  $(`#temp${i}`).append(temp);
-  $(`#humidity${i}`).append(humidity);
+  $(`#temp${i}`).html(`Temp: ${temp} F`);
+  $(`#humidity${i}`).html(`Humidity: ${humidity} %`);
   $(`#img${i}`).attr('src', `./assets/icons/${icon}.png`);
-  $(`#speed${i}`).append(speed);
+  $(`#speed${i}`).html(`Wind Speed: ${speed} MPH`);
 };
 
 var postWeather = function (temp, humidity, icon, speed, time, name, uvi) {
-  cityTemp.append(temp);
+  cityTemp.html(`Temp: ${temp} F`);
   cityIcon.attr('src', `./assets/icons/${icon}.png`);
-  cityName.append(name);
-  windSpeed.append(speed);
-  cityHumidity.append(humidity);
-  cityDate.append(time);
-  localStorage.setItem('', JSON.stringify(cityHistory));
-  // how do i make this a box
-  uvIndex.append(uvi);
+  cityName.html(name);
+  windSpeed.html(`Wind Speed: ${speed} MPH`);
+  cityHumidity.html(`Humidity: ${humidity} %`);
+  cityDate.html(time);
+  uvIndexel.empty();
+  uvIndexel.text(uvi);
 };
 
 // change color when the uv is too much
@@ -134,6 +123,32 @@ const changeColors = function (uvi) {
   }
 };
 
-var searchHistory = function () {
-  cityHistory = JSON.parse(localStorage.getItem('city'));
+searchButton.on('click', function () {
+  const cityInput = citySearch.val();
+  console.log(cityInput);
+  getWeather(cityInput);
+});
+
+const saveCity = function (city) {
+  if (cities.indexOf(city) === -1) {
+    cities.unshift(city);
+    localStorage.setItem('cities', JSON.stringify(cities));
+    loadCity();
+  }
 };
+
+const loadCity = function () {
+  const checkCities = JSON.parse(localStorage.getItem('cities'));
+
+  cityHistory.empty();
+  if (checkCities != null) {
+    for (let i = 0; i < checkCities.length; i++) {
+      const cityItem = checkCities[i];
+      console.log(cityItem);
+
+      cityHistory.append(`<li class='cityItem'>${cityItem}</li>`);
+    }
+    return (cities = checkCities);
+  }
+};
+loadCity();
