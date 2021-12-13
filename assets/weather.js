@@ -100,7 +100,7 @@ var postFiveDay = function (i, temp, humidity, icon, speed, date) {
 };
 
 var postWeather = function (temp, humidity, icon, speed, time, name, uvi) {
-  cityTemp.html(`Temp: ${temp} F`);
+  cityTemp.html(`Temp: ${temp} &#176F`);
   cityIcon.attr('src', `./assets/icons/${icon}.png`);
   cityName.html(name);
   windSpeed.html(`Wind Speed: ${speed} MPH`);
