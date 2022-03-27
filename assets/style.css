@@ -1,6 +1,8 @@
 header {
   text-align: center;
   font-size: xx-large;
+  background-color: #05386b;
+  color: white;
 }
 
 .fiveDay {
@@ -14,7 +16,18 @@ header {
 ul li {
   list-style: none;
 }
-
+.fiveDay {
+  color: black;
+  border-radius: 5px;
+}
+.divCard {
+  background-color: #05386b;
+}
+.currentWeather {
+  background-color: #05386b;
+  color: #edf5e1;
+  border-radius: 10px;
+}
 .moderate {
   background-color: yellow;
   color: white;
